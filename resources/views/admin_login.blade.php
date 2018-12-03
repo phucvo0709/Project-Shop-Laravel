@@ -51,15 +51,24 @@
                         <div class="icons">
                             <a href="index.html"><i class="halflings-icon home"></i></a>
                             <a href="#"><i class="halflings-icon cog"></i></a>
-                        </div>
+						</div>
+						<p class="alert-danger">
+						<?php 
+							$message = Session::get('message');
+							if($message){
+								echo $message;
+								Session::put('message', null);
+							}
+						?>
+						</p>
                         <h2>Login to your account</h2>
-                        <form class="form-horizontal" action="http://bootstrapmaster.com/live/metro/index.html" method="post">
+                    <form class="form-horizontal" action="{{url('/admin-dashboard')}}" method="post">
                             @csrf
                             <fieldset>
                                 
                                 <div class="input-prepend" title="Email">
                                     <span class="add-on"><i class="halflings-icon user"></i></span>
-                                    <input class="input-large span10" name="admi_email" type="email" placeholder="email address"/>
+                                    <input class="input-large span10" name="admin_email" type="email" placeholder="email address"/>
                                 </div>
                                 <div class="clearfix"></div>
 
