@@ -15,6 +15,20 @@
 Route::get("/", "HomeController@index");
 Route::get("/product-by-category/{category_id}", "HomeController@show_product_by_category");
 Route::get("/product-by-manufacture/{manufacture_id}", "HomeController@show_product_by_manufacture");
+Route::get("/view-product/{product_id}", "HomeController@product_details_by_id");
+
+Route::get("/show-cart", "CartController@show_cart");
+Route::post("/add-to-cart", "CartController@add_to_cart");
+Route::get("/delete-to-cart/{id}", "CartController@delete_to_cart");
+Route::post("/update-cart", "CartController@update_cart");
+
+Route::get("/checkout", "CheckoutController@index");
+Route::get("/login-checkout", "CheckoutController@login_checkout");
+Route::post("/customer-login", "CheckoutController@customer_login");
+Route::post("/customer-register", "CheckoutController@customer_register");
+Route::post("/save-shipping-details", "CheckoutController@save_shipping_details");
+Route::get("/logout-checkout", "CheckoutController@logout_checkout");
+Route::get("/payment", "CheckoutController@payment");
 
 //backend router    
 Route::get("/admin", "AdminController@index");
