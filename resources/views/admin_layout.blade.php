@@ -102,18 +102,26 @@
 						</li>
 
 						<li>
-							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Brands</span></a>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Manufactures</span></a>
 							<ul>
-								<li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Brand</span></a></li>
-								<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Brand</span></a></li>
+								<li><a class="submenu" href="{{URL::to('/add-manufacture')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Manufacture</span></a></li>
+								<li><a class="submenu" href="{{URL::to('/all-manufacture')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Manufacture</span></a></li>
 							</ul>	
 						</li>
 
 						<li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Products</span></a>
 							<ul>
-								<li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Product</span></a></li>
-								<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Product</span></a></li>
+								<li><a class="submenu" href="{{URL::to('/add-product')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Product</span></a></li>
+								<li><a class="submenu" href="{{URL::to('/all-product')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Product</span></a></li>
+							</ul>	
+						</li>
+
+						<li>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Sliders</span></a>
+							<ul>
+								<li><a class="submenu" href="{{URL::to('/add-slider')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Slider</span></a></li>
+								<li><a class="submenu" href="{{URL::to('/all-slider')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Slider</span></a></li>
 							</ul>	
 						</li>
 
@@ -134,8 +142,7 @@
 			<div id="content" class="span10">
                 @yield('admin_content')
 
-	        </div><!--/.fluid-container-->
-	
+			</div><!--/.fluid-container-->	
 			<!-- end: Content -->
 		</div><!--/#content.span10-->
 		</div><!--/fluid-row-->

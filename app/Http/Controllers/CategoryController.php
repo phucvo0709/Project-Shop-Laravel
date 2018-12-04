@@ -9,13 +9,23 @@ use Illuminate\Support\Facades\Redirect;
 
 class CategoryController extends Controller
 {
+    public function AdminAuthCheck(){
+        $admin_id = Session::get('admin_id');
+        if($admin_id){
+            return;
+        }else{
+            return Redirect::to('/admin')->send();
+        }
+    }
     public function index(){
         return view('admin.add_category');
     }
     
     public function all_category(){
+        $this->AdminAuthCheck();
         $all_category_info = DB::table('tbl_category')->get();
-        return view('admin.all_category')->with('all_category_info', $all_category_info);
+        $manager_category = view('admin.all_category')->with('all_category_info', $all_category_info);
+        return view('admin_layout')->with('admin.all_category', $manager_category);
     }
 
     public function save_category(Request $request){
